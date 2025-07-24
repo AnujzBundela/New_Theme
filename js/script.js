@@ -150,6 +150,8 @@
 async function fetchHeaderFooter() {
   try {
     const res = await fetch(`${API_BASE_Url}/api/site/website?userId=${UserId}`);
+    console.log("res",res);
+    
     if (!res.ok) throw new Error("Failed to fetch content");
 
     const data = await res.json();
