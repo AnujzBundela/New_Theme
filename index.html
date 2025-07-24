@@ -381,19 +381,15 @@
   </script>
 
 <script>
-  const API_BASE_URL = "https://8b419fc56513.ngrok-free.app";
+  const API_BASE_URL = "https://985f7d4be85d.ngrok-free.app";
   const userId = "6879c898fbe4bc33b8acafe5";
 
-  
-console.log("USER ID:", userId);
-console.log("FETCH URL:", `${API_BASE_URL}/api/contact/Contact?userId=${userId}`);
-
-  // document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("DOMContentLoaded", () => {
     fetchAndRenderBanner();
     fetchSliderImages();
     fetchProducts();
     fetchContent();
-  // });
+  });
 
   function initializeOwlCarousel() {
   const prevBtn = `<i class="fa-solid fa-arrow-left"></i> Prev`;
@@ -509,10 +505,10 @@ async function fetchContent() {
 
 
 
+
 async function fetchSliderImages() {
   try {
     const res = await fetch(`${API_BASE_URL}/api/site/slider-images?userId=${userId}`);
-    console.log("res",res);
     if (!res.ok) throw new Error("Failed to fetch slider images");
     const data = await res.json();
 
@@ -544,7 +540,6 @@ async function fetchSliderImages() {
 async function fetchProducts() {
   try {
     const res = await fetch(`${API_BASE_URL}/api/site/products?userId=${userId}`);
-    console.log("res",res);
     if (!res.ok) throw new Error("Failed to fetch products");
     const data = await res.json();
 

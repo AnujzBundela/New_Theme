@@ -144,14 +144,12 @@
     fetchHeaderFooter();
   });
 
-  const API_BASE_Url = "https://8b419fc56513.ngrok-free.app";
+  const API_BASE_Url = "https://985f7d4be85d.ngrok-free.app";
   const UserId = "6879c898fbe4bc33b8acafe5";
 
 async function fetchHeaderFooter() {
   try {
     const res = await fetch(`${API_BASE_Url}/api/site/website?userId=${UserId}`);
-    console.log("res",res);
-    
     if (!res.ok) throw new Error("Failed to fetch content");
 
     const data = await res.json();
